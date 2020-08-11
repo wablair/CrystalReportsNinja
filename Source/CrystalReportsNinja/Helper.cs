@@ -27,11 +27,12 @@ namespace CrystalReportsNinja
             Console.WriteLine("-O Crystal reports Output path and filename");
             Console.WriteLine("-E Export file type.(pdf,doc,xls,rtf,htm,rpt,txt,csv...) If print to printer simply specify \"print\"");
             Console.WriteLine("-a Parameter value");
+            Console.WriteLine("-b Selection formula");
             Console.WriteLine("-N Printer Name (Network printer : \\\\PrintServer\\Printername or Local printer : printername)");
             Console.WriteLine("-C Number of copy to be printed");
             Console.WriteLine("-l To write a log file. filename ninja-yyyyMMddHHmmss.log");
             Console.WriteLine("---------------------------------------------------");
-            Console.WriteLine("\nExample: C:\\> CrystalReportsNinja -U user1 -P mypass -S Server01 -D \"ExtremeDB\" -F c:\\test.rpt -O d:\\test.pdf -a \"Supplier Name:Active Outdoors\" -a \"Date Range:(12-01-2001,12-04-2002)\"");
+            Console.WriteLine("\nExample: C:\\> CrystalReportsNinja -U user1 -P mypass -S Server01 -D \"ExtremeDB\" -F c:\\test.rpt -O d:\\test.pdf -a \"Supplier Name:Active Outdoors\" -a \"Date Range:(12-01-2001,12-04-2002)\" -b \"{file.QTY} > 5\"");
             Console.WriteLine("Learn more in http://www.rainforestnet.com/crystal-reports-exporter/");
             
         }

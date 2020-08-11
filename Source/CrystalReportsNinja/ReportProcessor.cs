@@ -66,6 +66,16 @@ namespace CrystalReportsNinja
                 }
             }
         }
+        /// <summary>
+        /// Add selection formula to ReportDocument
+        /// </summary>
+        private void ProcessSelectionFormula()
+        {
+            var selection_formula = ReportArguments.SelectionFormula;
+        
+            if (selection_formula != null && selection_formula.Length > 0)
+                _reportDoc.RecordSelectionFormula = selection_formula;
+        }
 
         /// <summary>
         /// Validate configurations related to program output.
@@ -296,6 +306,7 @@ namespace CrystalReportsNinja
                 PerformDBLogin();
                 ApplyReportOutput();
                 ProcessParameters();
+                ProcessSelectionFormula();
 
                 PerformRefresh();
                 PerformOutput();

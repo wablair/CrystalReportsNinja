@@ -49,6 +49,11 @@ namespace CrystalReportsNinja
         /// </summary>
         public List<string> ParameterCollection { get; set; }
 
+        /// <summary>
+        /// -b Report Selection formula set. eg: "{file.QTY} > 5"
+        /// </summary>
+        public string SelectionFormula { get; set; }
+
         //below are action related properties
 
         /// <summary>
@@ -128,6 +133,8 @@ namespace CrystalReportsNinja
                             OutputFormat = parameters[i + 1];
                         else if (parameters[i].ToUpper() == "-N")
                             PrinterName = parameters[i + 1];
+                        else if (parameters[i].ToUpper() == "-B")
+                            SelectionFormula = parameters[i + 1];
                         else if (parameters[i].ToUpper() == "-C")
                         {
                             try
